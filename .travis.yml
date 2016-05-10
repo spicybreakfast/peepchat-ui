@@ -1,22 +1,23 @@
----
 language: node_js
 node_js:
-  - "4"
-
+- '4'
 sudo: false
-
 cache:
   directories:
-    - node_modules
-
+  - node_modules
 before_install:
-  - npm config set spin false
-  - npm install -g bower
-  - npm install phantomjs-prebuilt
-
+- npm config set spin false
+- npm install -g bower
+- npm install phantomjs-prebuilt
 install:
-  - npm install
-  - bower install
-
+- npm install
+- bower install
 script:
-  - npm test
+- npm test
+deploy:
+  provider: heroku
+  api_key:
+    secure: nRv6FPPIFP29eaUM82JkCJNEA/w+XhqYXhizEe/4RQMJWRiWtkXmUalOL+IIVjqhGYRfVHOXMrmc13lxNQRoC86e8KQZmlTSQMn44h/6S3zZUqj38MA+l48vIQa6CJOLytvH2QiEMsdFYplTpNkTzCoYjD8Ys2SCooomO1Hvis8buHDO8/oFaaCc9swsHirlEbq1xRG/2OVf0x6Fjy7OmGSqaKGWabNdDNyA4Bl0no/dhd0c6qixTGM2CmSl7v45kk6bJ/+CIEaiwOSnSPDEH82zh+aIXYeIFnmo3krMOmJGMcparpvSY+dBB2qU7AZPvlaDhSSMtuzlA1m2kJfuLKaCKgSDBToziXb+oJFaxmgt6s8TNYTWa0uIZr3rTZtXIfoS1OIpzpvrAFJ2VuRw4HvmurO9Podd95kWj6zyYuL2A2CqedFUHklGnPjc92X4FoTOxygAZJpCT3nd9Z/5wlXMm3MaV8FP8KFsDEBzh2+CqSpRHIuqJWCYSbPCE6WyswyK21ETX1+swbhTqCEAJzfa6+eqQueTwWar7w2zIw0ZGGS0R1HK5UqtFep10wCyEbzJXTQImktTNCb/WY/fOFbb9t37VzeQHtJXUJyfPs+df+l26gs/cg4BA8oy+lO6BVA6cWboDyVicb7oKzTZQVIylA853+An2H/oN1VTRtM=
+  app: still-gorge-28205
+  on:
+    repo: spicybreakfast/peepchat-ui

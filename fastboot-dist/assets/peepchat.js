@@ -275,7 +275,7 @@ define("peepchat/templates/application", ["exports"], function (exports) {
             "column": 0
           },
           "end": {
-            "line": 4,
+            "line": 5,
             "column": 0
           }
         },
@@ -292,6 +292,12 @@ define("peepchat/templates/application", ["exports"], function (exports) {
         var el2 = dom.createTextNode("Welcome to Ember");
         dom.appendChild(el1, el2);
         dom.appendChild(el0, el1);
+        var el1 = dom.createTextNode("\n");
+        dom.appendChild(el0, el1);
+        var el1 = dom.createElement("h4");
+        var el2 = dom.createTextNode("(with fastboot, on heroku!)");
+        dom.appendChild(el1, el2);
+        dom.appendChild(el0, el1);
         var el1 = dom.createTextNode("\n\n");
         dom.appendChild(el0, el1);
         var el1 = dom.createComment("");
@@ -302,10 +308,10 @@ define("peepchat/templates/application", ["exports"], function (exports) {
       },
       buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
         var morphs = new Array(1);
-        morphs[0] = dom.createMorphAt(fragment, 2, 2, contextualElement);
+        morphs[0] = dom.createMorphAt(fragment, 4, 4, contextualElement);
         return morphs;
       },
-      statements: [["content", "outlet", ["loc", [null, [3, 0], [3, 10]]]]],
+      statements: [["content", "outlet", ["loc", [null, [4, 0], [4, 10]]]]],
       locals: [],
       templates: []
     };
@@ -320,7 +326,7 @@ define("peepchat/templates/application", ["exports"], function (exports) {
 /* jshint ignore:start */
 
 define('peepchat/config/environment', ['ember'], function(Ember) {
-  return { 'default': {"modulePrefix":"peepchat","environment":"development","baseURL":"/","locationType":"auto","EmberENV":{"FEATURES":{}},"APP":{"name":"peepchat","version":"0.0.0+83f7c2a5"},"exportApplicationGlobal":true}};
+  return { 'default': {"modulePrefix":"peepchat","environment":"development","baseURL":"/","locationType":"auto","EmberENV":{"FEATURES":{}},"APP":{"name":"peepchat","version":"0.0.0+decb3dda"},"exportApplicationGlobal":true}};
 });
 
 /* jshint ignore:end */
@@ -328,7 +334,7 @@ define('peepchat/config/environment', ['ember'], function(Ember) {
 /* jshint ignore:start */
 
 if (!runningTests) {
-  require("peepchat/app")["default"].create({"name":"peepchat","version":"0.0.0+83f7c2a5"});
+  require("peepchat/app")["default"].create({"name":"peepchat","version":"0.0.0+decb3dda"});
 }
 
 define('~fastboot/app-factory', ['peepchat/app', 'peepchat/config/environment'], function(App, config) {
